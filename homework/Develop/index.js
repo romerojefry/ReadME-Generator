@@ -20,4 +20,4 @@ inquirer.prompt({
     type: "input",
     message: "What kind of license should your project have?",
     name: "license"
-})
+}).then(function(answers){}
