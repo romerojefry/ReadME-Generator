@@ -1,9 +1,22 @@
 function generateMarkdown(data) {
   return `
-# ${data.username}
-# ${data.email}
-# ${data.title}
-# ${data.license}
+  
+# ${info.title}
+
+## Description 
+
+## Table of contents 
+
+-[Description](#Description)
+-[license](#license)
+
+## license 
+${info.license}
+
+
+
+# ${info.email}
+# ${info.username}
 `;
 }
 
