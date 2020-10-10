@@ -20,4 +20,7 @@ inquirer.prompt({
     type: "input",
     message: "What kind of license should your project have?",
     name: "license"
-}).then(function(answers){}
+}).then(function(answers){
+    console.log(answers.username)
+    const queryURL="https://api.github.com/users/${answers.username}";
+};
