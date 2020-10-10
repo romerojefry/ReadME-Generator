@@ -23,4 +23,10 @@ inquirer.prompt({
 }).then(function(answers){
     console.log(answers.username)
     const queryURL="https://api.github.com/users/${answers.username}";
-};
+
+    axious
+        .get(queryURL)
+        .then(function(submit){
+            console.log(submit.data.username);
+        }
+});
