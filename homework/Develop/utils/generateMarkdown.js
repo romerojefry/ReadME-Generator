@@ -34,8 +34,9 @@ ${info.test}
 ##Questions
 ${info.Quest}
 
-# ${info.email}
-# ${info.username}
+##GitHub 
+${info.email}
+${info.username}
 `;
 }
 
