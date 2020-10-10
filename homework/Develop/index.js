@@ -24,6 +24,11 @@ inquirer.prompt([{
 },
 {
     type: "input",
+    message: "What is your command installation?",
+    name: "install"
+},
+{
+    type: "input",
     message: "What kind of license should your project have?",
     name: "license"
 }]).then(function(answers){
@@ -38,6 +43,7 @@ inquirer.prompt([{
             const title = answers.title
             const license = answers.license 
             const description = answers.description
+            const install = answers.install
             console.log(submit);
             let info = generateMarkdown(answers)
             fs.writeFile('README.md',info,

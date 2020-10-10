@@ -1,7 +1,7 @@
 function generateMarkdown(info) {
   return `
   
-# ${info.title}
+## ${info.title}
 
 ## Description 
 
@@ -11,6 +11,10 @@ ${info.description}
 
 * [Description](#Description)
 * [license](#license)
+* [Installation](#install)
+
+## Installation
+${info.install}
 
 ## license 
 ${info.license}
