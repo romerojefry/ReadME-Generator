@@ -1,8 +1,8 @@
 const axios = require("axios");
 const inquirer = require("inquirer");
 const fs = require('fs');
-
-inquirer.prompt({
+const generateMarkdown = require("./utils/generateMarkdown")
+inquirer.prompt([{
     type: "input",
     message: "Wat is your Github username?",
     name: "username",
@@ -21,20 +21,24 @@ inquirer.prompt({
     type: "input",
     message: "What kind of license should your project have?",
     name: "license"
-}).then(function(answers){
+}]).then(function(answers){
     console.log(answers.username)
-    const queryURL="https://api.github.com/users/${answers.username}";
+    const queryURL=`https://api.github.com/users/${answers.username}`;
 
     axios
         .get(queryURL)
         .then(function(submit){
-            console.log(submit.answers.username);
-            let data = submit.answers
-            fs.writeFile('README.md',data),
+            const username = answers.username 
+            const email = answers.email
+            const title = answers.title
+            const license = answers.license 
+            console.log(submit);
+            let info = generateMarkdown(answers)
+            fs.writeFile('README.md',info,
                 function(err){
                     if(err){
                         throw err;
                     };
-                };
+                });
         });
 });
