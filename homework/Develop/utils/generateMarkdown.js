@@ -14,7 +14,8 @@ ${info.description}
 * [Installation](#Installation)
 * [Usage](#Usage)
 * [Test](#Test) 
-* [Contributing](Contributing)
+* [Contributing](#Contributing)
+* [Questions](#Questions)
 
 ## Installation
 ${info.install}
@@ -29,6 +30,9 @@ ${info.license}
 
 ## Test
 ${info.test}
+
+##Questions
+${info.Quest}
 
 # ${info.email}
 # ${info.username}

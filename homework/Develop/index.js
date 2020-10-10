@@ -41,6 +41,11 @@ inquirer.prompt([{
     type: "input",
     message: "What kind of license should your project have?",
     name: "license"
+},
+{
+    type: "input",
+    message: "Any questions?",
+    name: "Quest"
 }]).then(function(answers){
     console.log(answers.username)
     const queryURL=`https://api.github.com/users/${answers.username}`;
@@ -56,6 +61,7 @@ inquirer.prompt([{
             const install = answers.install
             const test = answers.test 
             const contrib = answers.contrib
+            const Quest = answers.Quest
             console.log(submit);
             let info = generateMarkdown(answers)
             fs.writeFile('README.md',info,
