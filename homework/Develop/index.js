@@ -30,6 +30,11 @@ inquirer.prompt({
         .then(function(submit){
             console.log(submit.answers.username);
             let data = submit.answers
-            fs.writeFile('README.md',data)
-        }
+            fs.writeFile('README.md',data),
+                function(err){
+                    if(err){
+                        throw err;
+                    };
+                };
+        });
 });
