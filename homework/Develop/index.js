@@ -14,8 +14,13 @@ inquirer.prompt([{
 },
 {
     type: "input",
-    message: "what is your project name",
+    message: "what is your project name?",
     name: "title"
+},
+{
+    type: "input",
+    message: "What is your description of your project?",
+    name: "description"
 },
 {
     type: "input",
@@ -32,6 +37,7 @@ inquirer.prompt([{
             const email = answers.email
             const title = answers.title
             const license = answers.license 
+            const description = answers.description
             console.log(submit);
             let info = generateMarkdown(answers)
             fs.writeFile('README.md',info,
