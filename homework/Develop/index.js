@@ -4,7 +4,7 @@ const fs = require('fs');
 const generateMarkdown = require("./utils/generateMarkdown")
 inquirer.prompt([{
     type: "input",
-    message: "Wat is your Github username?",
+    message: "What is your Github username?",
     name: "username",
 },
 {
