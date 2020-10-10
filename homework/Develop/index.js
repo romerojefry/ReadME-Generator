@@ -1,7 +1,9 @@
+// created variables to read files
 const axios = require("axios");
 const inquirer = require("inquirer");
 const fs = require('fs');
 const generateMarkdown = require("./utils/generateMarkdown")
+//created my prompts
 inquirer.prompt([{
     type: "input",
     message: "What is your Github username?",
@@ -47,9 +49,9 @@ inquirer.prompt([{
     message: "Any questions?",
     name: "Quest"
 }]).then(function(answers){
-    console.log(answers.username)
+    console.log(answers.username)// created a function to get github api
     const queryURL=`https://api.github.com/users/${answers.username}`;
-
+//created my variables from answers to geratemarkdown
     axios
         .get(queryURL)
         .then(function(submit){
@@ -63,7 +65,7 @@ inquirer.prompt([{
             const contrib = answers.contrib
             const Quest = answers.Quest
             console.log(submit);
-            let info = generateMarkdown(answers)
+            let info = generateMarkdown(answers)// create to link to mardown.js
             fs.writeFile('README.md',info,
                 function(err){
                     if(err){
