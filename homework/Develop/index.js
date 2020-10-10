@@ -34,6 +34,11 @@ inquirer.prompt([{
 },
 {
     type: "input",
+    message: "Any contributors?",
+    name: "contrib"
+},
+{
+    type: "input",
     message: "What kind of license should your project have?",
     name: "license"
 }]).then(function(answers){
@@ -50,6 +55,7 @@ inquirer.prompt([{
             const description = answers.description
             const install = answers.install
             const test = answers.test 
+            const contrib = answers.contrib
             console.log(submit);
             let info = generateMarkdown(answers)
             fs.writeFile('README.md',info,
